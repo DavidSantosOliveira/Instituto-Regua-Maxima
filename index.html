@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Régua Máxima - Curso Profissional de Barbeiro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cor-branco: #ffffff;
+            --cor-preto: #000000;
+            --cor-dourado: #FAC703;
+            --cor-dourado-escuro: #B8941F;
+            --cor-cinza-claro: #f8f9fa;
+            --cor-cinza-escuro: #333333;
+            --cor-texto: #444444;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--cor-texto);
+            line-height: 1.6;
+            background-color: var(--cor-branco);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--cor-preto);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--cor-dourado);
+            margin: 15px auto 0;
+        }
+        
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--cor-preto);
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: var(--cor-dourado);
+            color: var(--cor-preto);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-whatsapp i {
+            margin-right: 8px;
+        }
+        
+        .gold-text {
+            color: var(--cor-dourado);
+        }
+        
+        /* Header e Logo */
+        header {
+            background-color: #ebe9e9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        
+        .logo-text .instituto {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--cor-preto);
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text .regua {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--cor-dourado);
+            line-height: 1;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+        
+        .logo-text .makimas {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--cor-preto);
+            line-height: 1;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--cor-preto);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--cor-dourado);
+        }
+        
+        /* Garantir contraste para botões dentro do menu (ex.: Fale Conosco) */
+        .nav-menu a.btn-whatsapp {
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            padding: 10px 18px;
+            border-radius: 5px;
+            border: 2px solid var(--cor-preto);
+            display: inline-block;
+        }
+        .nav-menu a.btn-whatsapp:hover {
+            background-color: var(--cor-dourado);
+            color: var(--cor-preto);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--cor-preto);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--cor-cinza-claro);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--cor-cinza-escuro);
+        }
+        
+        .hero-video {
+            flex: 1;
+            position: relative;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: var(--cor-preto);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cor-branco);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-placeholder:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .video-placeholder i {
+            font-size: 4rem;
+            color: var(--cor-dourado);
+            z-index: 2;
+        }
+        
+        .video-placeholder span {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
+            font-weight: 600;
+        }
+        
+        /* Sobre o Curso */
+        .sobre {
+            background-color: var(--cor-branco);
+        }
+        
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .sobre-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .sobre-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .sobre-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .sobre-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .sobre-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Seções com Abas */
+        .abas-section {
+            background-color: var(--cor-cinza-claro);
+        }
+        
+        .abas-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .abas-botoes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+        
+        .aba-btn {
+            padding: 15px 25px;
+            background-color: var(--cor-branco);
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+        }
+        
+        .aba-btn:hover, .aba-btn.active {
+            background-color: var(--cor-dourado);
+            color: var(--cor-preto);
+            border-color: var(--cor-dourado);
+        }
+        
+        .aba-conteudo {
+            background-color: var(--cor-branco);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .aba-item {
+            display: none;
+        }
+        
+        .aba-item.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .aba-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--cor-dourado);
+        }
+        
+        .aba-item ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+        
+        .aba-item li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        /* Diferenciais */
+        .diferenciais {
+            background-color: var(--cor-branco);
+        }
+        
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .diferencial-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .diferencial-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .diferencial-icon {
+            font-size: 2.5rem;
+            color: var(--cor-dourado);
+            margin-bottom: 20px;
+        }
+        
+        .diferencial-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Público Indicado */
+        .publico {
+            background-color: var(--cor-cinza-claro);
+        }
+        
+        .publico-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .publico-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .publico-item {
+            background-color: var(--cor-branco);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--cor-dourado);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .publico-item i {
+            color: var(--cor-dourado);
+            margin-right: 10px;
+        }
+        
+        /* CTA Final */
+        .cta-final {
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-final h2 {
+            color: var(--cor-branco);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-final .btn-whatsapp {
+            background-color: var(--cor-dourado);
+            color: var(--cor-preto);
+            font-size: 1.2rem;
+            padding: 18px 40px;
+        }
+        
+        .cta-final .btn-whatsapp:hover {
+            background-color: var(--cor-branco);
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo .logo-text .instituto,
+        .footer-logo .logo-text .makimas {
+            color: var(--cor-branco);
+        }
+        
+        .footer-logo .logo-text .regua {
+            color: var(--cor-dourado);
+        }
+        
+        .footer-info h3,
+        .footer-contato h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--cor-dourado);
+        }
+        
+        .footer-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-info i {
+            margin-right: 10px;
+            color: var(--cor-dourado);
+            min-width: 20px;
+        }
+        
+        .footer-contato a {
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-content,
+            .sobre-content {
+                flex-direction: column;
+            }
+            
+            .hero-text,
+            .sobre-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--cor-branco);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .abas-botoes {
+                flex-direction: column;
+            }
+            
+            .aba-btn {
+                min-width: 100%;
+            }
+            
+            .aba-conteudo {
+                padding: 20px;
+            }
+            /* Ajustes para o botão no menu mobile */
+            .nav-menu a.btn-whatsapp {
+                display: block;
+                width: calc(100% - 40px);
+                margin: 10px 20px;
+                padding: 12px 16px;
+                text-align: center;
+                border-radius: 6px;
+                box-sizing: border-box;
+            }
+            .nav-menu a.btn-whatsapp i {
+                margin-right: 8px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-final h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com Logo -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">
+                    <img src="img/logocursobarbeiro.jpeg" alt="logo Régua Máxima">
+                    
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#sobre">Sobre o Curso</a></li>
+                    <li><a href="#abas">O que Você Vai Aprender</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#publico">Para Quem é o Curso</a></li>
+                    <li><a href="#cta" class="btn-whatsapp">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> <br><br>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Torne-se um Barbeiro Profissional e <span class="gold-text">Conquiste sua Independência Financeira</span></h1>
+                    <p>O Instituto Régua Máxima oferece um curso completo para quem quer entrar no mercado de barbearia com segurança, técnica e confiança — mesmo começando do zero.</p>
+                    <a href="https://wa.me/message/XYD2RUGT7BIHD1" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> GARANTIR MINHA VAGA AGORA
+                    </a>
+                </div>
+                
+                <div class="hero-video">
+                        <span><iframe width="560" height="315" src="https://www.youtube.com/embed/RADahtkyfl8?si=nTNMi8vCDcbWValf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>Vídeo de apresentação do curso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Curso -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre o Curso</h2>
+            </div>
+            
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h2>Instituto Régua Máxima — <span class="gold-text">Formação Profissional de Verdade para Quem Quer Vencer na Barbearia</span></h2>
+                    <p>O Curso Profissional de Barbeiro do Instituto Régua Máxima foi desenvolvido para formar barbeiros de alta performance, prontos para trabalhar em qualquer barbearia profissional ou até abrir seu próprio negócio.</p>
+                    <p>Você vai aprender do básico ao avançado com uma metodologia clara, prática e focada no mercado real — aliada a sessões de coaching de carreira exclusivas, para te ajudar a alcançar uma vida profissional de verdade.</p>
+                </div>
+                
+                <div class="sobre-image">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Barbeiro profissional trabalhando">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seções com Abas -->
+    <section class="abas-section" id="abas">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que Você Vai Aprender?</h2>
+            </div>
+            
+            <div class="abas-container">
+                <div class="abas-botoes" id="abasBotoes">
+                    <button class="aba-btn active" data-aba="1">Técnicas de Corte</button>
+                    <button class="aba-btn" data-aba="2">Barboterapia</button>
+                    <button class="aba-btn" data-aba="3">Biossegurança</button>
+                    <button class="aba-btn" data-aba="4">Branding Pessoal</button>
+                    <button class="aba-btn" data-aba="5">Coaching Integrado</button>
+                </div>
+                
+                <div class="aba-conteudo">
+                    <!-- Aba 1: Técnicas de Corte -->
+                    <div class="aba-item active" id="aba-1">
+                        <h3>Técnicas Profissionais de Corte</h3>
+                        <ul>
+                            <li>Fade, low fade, mid fade e high fade</li>
+                            <li>Corte na tesoura</li>
+                            <li>Acabamentos profissionais</li>
+                            <li>Manuseio correto da máquina e lâmina</li>
+                            <li>Técnicas modernas utilizadas nas melhores barbearias do país</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Aba 2: Barboterapia -->
+                    <div class="aba-item" id="aba-2">
+                        <h3>Barboterapia e Cuidados com a Barba</h3>
+                        <ul>
+                            <li>Toalha quente</li>
+                            <li>Alinhamento de barba</li>
+                            <li>Desenho perfeito</li>
+                            <li>Técnicas de navalha</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Aba 3: Biossegurança -->
+                    <div class="aba-item" id="aba-3">
+                        <h3>Higiene, Biossegurança e Atendimento Premium</h3>
+                        <ul>
+                            <li>Higienização correta</li>
+                            <li>Cuidado com instrumentos</li>
+                            <li>Organização da estação de trabalho</li>
+                            <li>Atendimento que fideliza o cliente</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Aba 4: Branding Pessoal -->
+                    <div class="aba-item" id="aba-4">
+                        <h3>Branding Pessoal e Posicionamento no Mercado</h3>
+                        <ul>
+                            <li>Como precificar</li>
+                            <li>Como montar sua agenda lotada</li>
+                            <li>Como se diferenciar mesmo em regiões competitivas</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Aba 5: Coaching Integrado -->
+                    <div class="aba-item" id="aba-5">
+                        <h3>+ 30 Min de Coaching em TODAS as Aulas</h3>
+                        <ul>
+                            <li>Técnica dos Níveis Neurológicos para desbloqueio de crenças</li>
+                            <li>Construção de autoconfiança</li>
+                            <li>Desenvolvimento de postura profissional</li>
+                            <li>Direcionamento de carreira real</li>
+                            <li>Foco em alunos que vêm de ambientes desfavorecidos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="diferenciais" id="diferenciais">
+        <div class="container">
+            <div class="section-title">
+                <h2>Diferenciais do Instituto</h2>
+            </div>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Professores Experientes</h3>
+                    <p>Professores experientes e atuantes no mercado</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certificado Reconhecido</h3>
+                    <p>Certificado reconhecido no mercado de trabalho</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Treinamento 100% Prático</h3>
+                    <p>Treinamento 100% prático com modelos reais</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Metodologia Própria</h3>
+                    <p>Aulas com metodologia própria e eficaz</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Coaching de Carreira</h3>
+                    <p>Coaching de carreira incluso no curso</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Material Didático</h3>
+                    <p>Material didático completo e atualizado</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>Suporte ao Aluno</h3>
+                    <p>Suporte ao aluno pelo WhatsApp durante todo o curso</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Acompanhamento Pós-Curso</h3>
+                    <p>Acompanhamento no pós-curso para seu sucesso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Público Indicado -->
+    <section class="publico" id="publico">
+        <div class="container">
+            <div class="section-title">
+                <h2>Para Quem é Este Curso?</h2>
+            </div>
+            
+            <div class="publico-content">
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem;">Este curso é perfeito para você que:</p>
+                
+                <div class="publico-list">
+                    <div class="publico-item">
+                        <p><i class="fas fa-cut"></i> Quer começar na área da beleza</p>
+                    </div>
+                    
+                    <div class="publico-item">
+                        <p><i class="fas fa-money-bill-wave"></i> Busca independência financeira</p>
+                    </div>
+                    
+                    <div class="publico-item">
+                        <p><i class="fas fa-sync-alt"></i> Deseja mudar de vida através da profissão</p>
+                    </div>
+                    
+                    <div class="publico-item">
+                        <p><i class="fas fa-store"></i> Quer trabalhar em barbearia ou abrir a própria</p>
+                    </div>
+                    
+                    <div class="publico-item">
+                        <p><i class="fas fa-user-plus"></i> Nunca cortou cabelo antes</p>
+                    </div>
+                    
+                    <div class="publico-item">
+                        <p><i class="fas fa-tools"></i> Já trabalha mas quer aperfeiçoar suas técnicas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="cta">
+        <div class="container">
+            <h2>Está pronto para transformar sua vida e iniciar uma carreira valorizada e em alta?</h2>
+            <p>Entre em contato e conheça nossas condições acessíveis para que você possa iniciar agora mesmo.</p>
+            <a href="https://wa.me/message/XYD2RUGT7BIHD1" class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> QUERO ME TORNAR BARBEIRO PROFISSIONAL
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">
+                        <img src="img/logocursobarbeiro(fundopreto).jpeg" alt="logo Régua Máxima">
+                        
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <h3>Localização</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Manoel Muniz Falcão 75/80, Corrêas (Dentro da Academia Athletic Club no Prado) - Petrópolis - RJ</p>
+                    <p><i class="far fa-clock"></i> Horário de funcionamento: Seg-Sex: 9h-18h</p>
+                </div>
+                
+                <div class="footer-contato">
+                    <h3>Entre em Contato</h3>
+                    <p>Tem dúvidas sobre o curso? Fale diretamente com nossa equipe pelo WhatsApp!</p>
+                    <a href="https://wa.me/message/XYD2RUGT7BIHD1" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Falar com um consultor
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Instituto Régua Máxima. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Sistema de Abas
+        const abaBtns = document.querySelectorAll('.aba-btn');
+        const abaItems = document.querySelectorAll('.aba-item');
+        
+        abaBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover classe active de todos os botões e conteúdos
+                abaBtns.forEach(b => b.classList.remove('active'));
+                abaItems.forEach(item => item.classList.remove('active'));
+                
+                // Adicionar classe active ao botão clicado
+                btn.classList.add('active');
+                
+                // Mostrar o conteúdo correspondente
+                const abaId = btn.getAttribute('data-aba');
+                document.getElementById(`aba-${abaId}`).classList.add('active');
+            });
+        });
+        
+        // Scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Atualizar header ao rolar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
